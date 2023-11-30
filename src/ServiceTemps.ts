@@ -13,11 +13,12 @@ export enum CadranSoleil {
   Deux = 2,
 }
 
+
 export enum Heure {
-  Mortin,
-  ApresMidi,
+  ApresMidi ,
   Soir,
   Nuit,
+  Matin
 }
 
 export const calculerHeure = (
@@ -32,10 +33,10 @@ export const calculerHeure = (
   const resultat = pouvoirLune + pouvoirTerre + pouvoirSoleil;
 
   if (resultat <= 1) {
-    return Heure.Mortin;
-  } else if (resultat <= 2) {
+    return Heure.Matin
+  } else if (resultat <= 2 ) {
     return Heure.ApresMidi;
-  } else if (resultat <= 4) {
+  } else if (resultat === 4 || resultat === 3) {
     return Heure.Soir;
   } else {
     return Heure.Nuit;
